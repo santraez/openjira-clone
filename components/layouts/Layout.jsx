@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Box } from "@mui/material";
-import { Navbar } from "../ui";
+import { Sidebar, Navbar } from "../ui";
 
 export const Layout = ({ title='OpenJira', children }) => {
   return (
@@ -9,7 +9,7 @@ export const Layout = ({ title='OpenJira', children }) => {
         <title>{title}</title>
       </Head>
       <Navbar />
-      {/* Sidebar */}
+      <Sidebar />
       <Box sx={{ padding: '10px 20px' }}>
         {children}
       </Box>
