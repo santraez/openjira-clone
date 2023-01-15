@@ -10,6 +10,21 @@ export const uiReducer = (state, action) => {
         ...state,
         isSidebarOpen: false,
       };
+    case 'UI - Set isAddingEntry':
+      return {
+        ...state,
+        isAddingEntry: action.payload,
+      };
+    case 'UI - Start Dragging':
+      return {
+        ...state,
+        isDragging: true,
+      };
+    case 'UI - Stop Dragging':
+      return {
+        ...state,
+        isDragging: false,
+      };
     default:
       return state;
   };

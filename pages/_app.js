@@ -1,6 +1,7 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { lightTheme, darkTheme } from '../themes';
 import { UIProvider } from '../context/ui';
+import { EntriesProvider } from '../context/entries';
+import { lightTheme, darkTheme } from '../themes';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -9,12 +10,14 @@ import '../styles/globals.css';
 
 const App = ({ Component, pageProps }) => {
   return (
-    <UIProvider>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </UIProvider>
+    <EntriesProvider>
+      <UIProvider>
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </UIProvider>
+    </EntriesProvider>
   );
 };
 
